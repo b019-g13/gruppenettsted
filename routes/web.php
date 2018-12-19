@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Auth routes
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
 });
