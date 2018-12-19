@@ -1,0 +1,48 @@
+@import '_variables.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    background-color: $body-bg;
+    font-family: $font-family-sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: $font-size-base;
+    font-size: calc(#{$font-size-base} + 0.1vw);
+    line-height: $line-height-base;
+}
+
+nav,
+main {
+    width: 100%;
+    max-width: 30em;
+    margin: 0 auto;
+    padding: 1em 2em;
+}
+
+nav {
+    margin: 0 auto 2em;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    font-style: normal;
+    font-family: $font-family-serif;
+}
