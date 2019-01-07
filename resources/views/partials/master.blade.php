@@ -7,5 +7,6 @@
     <footer>
         @include('partials.footer')
     </footer>
+    @include('partials.flash-messages')
 </body>
 </html>
