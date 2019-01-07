@@ -46,3 +46,11 @@ h3 {
     font-style: normal;
     font-family: $font-family-serif;
 }
+
+img {
+    max-width: 100%;
+}
+
+table img {
+    width: 100px;
+}
