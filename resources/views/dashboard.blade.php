@@ -1,6 +1,6 @@
 @extends('partials.master')
 
 @section('content-main')
-    <h1>Hei {{ Auth::user()->name }}</h1>
-    <p>Du er logget inn.</p>
+    <h1>Kontrollpanel</h1>
+    <p>Hei {{ Auth::user()->name }}. Du er logget inn.</p>
 @endsection
