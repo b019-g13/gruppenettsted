@@ -17,6 +17,10 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
+// Laravel somtimes redirects to /home by default, so let's send those to the dashboard instead
+Route::get('home', function () {
+    return redirect()->route('dashboard');
+})->name('home');
 
 // Posts
 // We could also use Route::resource('innlegg', 'PostController'), but this gives us finer control:
