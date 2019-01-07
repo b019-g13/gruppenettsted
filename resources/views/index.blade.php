@@ -1,16 +1,16 @@
 @extends('partials.master')
 
 @section('content-main')
-    <div class="title m-b-md">
-        Laravel
-    </div>
+    <header>
+        <h1>B019-G13</h1>
+        <p>Bachelorgruppe på Høgskolen i Østfold.</p>
+        <p>Oppgave: Utvikle nettsted for Sirkus Media</p>
+        <a href="{{ route('post.show', $about_post->slug) }}" class="button">{{ $about_post->title }}</a>
+    </header>
 
-    <div class="links">
-        <a href="https://laravel.com/docs">Documentation</a>
-        <a href="https://laracasts.com">Laracasts</a>
-        <a href="https://laravel-news.com">News</a>
-        <a href="https://nova.laravel.com">Nova</a>
-        <a href="https://forge.laravel.com">Forge</a>
-        <a href="https://github.com/laravel/laravel">GitHub</a>
-    </div>
+    <section>
+        <h2>Oppdateringer</h2>
+
+        @include('posts.index-content')
+    </section>
 @endsection
