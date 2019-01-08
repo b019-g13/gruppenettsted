@@ -1,5 +1,12 @@
 @include('partials.head')
-<body>
+@php
+	if (!isset($body_class)) {
+		$body_class = '';
+    }
+
+    $body_class .= ' ' . $view_name
+@endphp
+<body class="{{ $body_class }}">
     @include('partials.navigation')
     <main>
         @yield('content-main')

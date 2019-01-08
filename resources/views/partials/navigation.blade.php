@@ -1,25 +1,14 @@
 <nav>
-    <div>
-        <a href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-    </div>
-    <div>
-        @guest
-            <a href="{{ route('login') }}">{{ __('Login') }}</a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}">{{ __('Register') }}</a>
-            @endif
-        @endguest
-        @auth
-            <a href="{{ route('dashboard') }}">Kontrollpanel</a>
-            <a href="{{ route('post.index.admin') }}">Innlegg</a>
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+    <div class="nav-content">
+        <div class="links-left">
+            <a href="{{ url('/') }}">
+                {{ config('app.name', 'Laravel') }}
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        @endauth
+        </div>
+        <div class="links-right">
+            <a href="{{ route('post.index') }}">Innlegg</a>
+            <a href="{{ route('about.group') }}">Om gruppen</a>
+            <a href="{{ route('about.project') }}">Om prosjektet</a>
+        </div>
     </div>
 </nav>

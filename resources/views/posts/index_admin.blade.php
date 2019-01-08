@@ -14,7 +14,7 @@
                     <h2>{{ $post->title }}</h2>
                 </td>
                 <td>
-                    <a href="{{ route('post.show', $post) }}">Vis</a>
+                    <a href="{{ route('post.show', $post->slug) }}">Vis</a>
                 </td>
                 <td>
                     <a href="{{ route('post.edit', $post) }}">Rediger</a>
