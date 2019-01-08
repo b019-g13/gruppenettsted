@@ -327,11 +327,86 @@ body.page-posts {
 
 body.page-auth,
 body.page-dashboard,
+body.page-posts.posts-edit,
+body.page-posts.posts-create,
 body.posts-index-admin {
     main {
         margin: 0 auto #{$line-height-base*2}em;
         display: block;
         max-width: $default-width;
         padding: 0 0.5rem;
+    }
+}
+
+body.posts-index-admin {
+    table {
+        margin-top: 3em;
+        border-collapse: collapse;
+        width: 100%;
+
+        tr, td {
+            border-collapse: collapse;
+        }
+
+        tr {
+            &:nth-child(odd) {
+                background-color: darken($body-bg, 2.5%);
+            }
+        }
+
+        td {
+            padding: 0.25em 0.5em;
+        }
+
+        img {
+            width: 3rem;
+        }
+
+        h2 {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        a {
+            margin-left: 0.5em;
+        }
+    }
+}
+
+body.page-posts.posts-edit,
+body.page-posts.posts-create {
+    form {
+        > div {
+            width: 100%;
+            margin-bottom: 1em;
+
+            label,
+            select,
+            textarea,
+            input {
+                display: block;
+                max-width: 100%;
+            }
+
+            select,
+            textarea,
+            input {
+                padding: 0.5em 1em;
+            }
+
+            input,
+            select {
+                width: ($default-width/3);
+            }
+
+            textarea {
+                width: 100%;
+                min-height: 400px;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
     }
 }
