@@ -309,12 +309,12 @@ body.page-posts {
                 }
             }
 
-            @media screen and (min-width: $default-width) {
-                p:first-child {
-                    columns: 2;
-                    max-width: 100%;
-                }
-            }
+            // @media screen and (min-width: $default-width) {
+            //     p:first-child {
+            //         columns: 2;
+            //         max-width: 100%;
+            //     }
+            // }
         }
     }
 
