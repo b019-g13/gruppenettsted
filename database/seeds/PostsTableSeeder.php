@@ -12,8 +12,9 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        PostType::create(['name' => 'Offentlig', 'slug' => 'public']);
-        PostType::create(['name' => 'Privat',    'slug' => 'private']);
+        PostType::create(['name' => 'Offentlig',        'slug' => 'public']);
+        PostType::create(['name' => 'Privat',           'slug' => 'private']);
+        PostType::create(['name' => 'Ikke oppført',     'slug' => 'unlisted']);
         PostType::create(['name' => 'Passordbeskyttet', 'slug' => 'password-protected']);
     }
 }
