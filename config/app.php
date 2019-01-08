@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'posts_secret' => env('POSTS_SECRET'),
 
     /*
     |--------------------------------------------------------------------------

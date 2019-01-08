@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Session;
 
 use Illuminate\Http\Request;
@@ -18,7 +19,9 @@ class PostController extends Controller
         // Users have to be logged-in in order to create and edit posts
         $this->middleware('auth')->except(
             'index',
-            'show'
+            'show',
+            'form_pp',
+            'show_pp'
         );
     }
 
@@ -128,7 +131,27 @@ class PostController extends Controller
             $post = Post::where('slug', $post)->firstOrFail();
         }
 
+        if ($post->post_type->slug == 'password-protected' && !Auth::check()) {
+            return redirect()->route('post.pp.form', $post);
+        }
+
         return view('posts.show', compact('post'));
+    }
+
+    public function form_pp(Post $post)
+    {
+        return view('posts.form-pp', compact('post'));
+    }
+
+    public function show_pp(Request $request, Post $post)
+    {
+        $secret = config('app.posts_secret');
+
+        if ($request->has('password') && $request->password === $secret) {
+            return view('posts.show', compact('post'));
+        }
+
+        return abort(403);
     }
 
     // Show to form for editing a post
