@@ -67,9 +67,9 @@ class Post extends Model
 
             // Resize image
             $edited_image = ImageEditor::make( $uploaded_file );
-            $edited_image->fit(1920, 1080, function ($constraint) {
-                $constraint->upsize();
-            });
+            // $edited_image->fit(1920, 1080, function ($constraint) {
+            //     $constraint->upsize();
+            // });
             $edited_image->orientate();
 
             // Upload image, convert it to jpg, and compress it slightly
