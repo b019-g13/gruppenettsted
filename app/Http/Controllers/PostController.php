@@ -131,6 +131,10 @@ class PostController extends Controller
             $post = Post::where('slug', $post)->firstOrFail();
         }
 
+        if ($post->post_type->slug == 'private' && !Auth::check()) {
+            return abort(403);
+        }
+
         if ($post->post_type->slug == 'password-protected' && !Auth::check()) {
             return redirect()->route('post.pp.form', $post);
         }
