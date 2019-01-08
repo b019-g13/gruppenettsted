@@ -8,9 +8,10 @@
         <a href="{{ route('about.project') }}" class="button">Om prosjektet</a>
     </header>
 
+    @if ($posts != null && count($posts) > 0)
         <section>
             <h2>Oppdateringer</h2>
-
             @include('posts.index-content')
         </section>
+    @endif
 @endsection
