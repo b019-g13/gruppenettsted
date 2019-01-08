@@ -21,16 +21,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $post_types = PostType::where('slug', 'public')->get()->toArray();
-
         // Get all public posts
+        $post_types = PostType::where('slug', 'public')->get()->toArray();
         $posts = Post::whereIn('post_type_id', $post_types)->get();
-
-        // Get the about project post
-        $about_post = $posts->where('slug', 'om-prosjektet')->first();
-
-        // Filter out the about project post from all the other posts
-        $posts = $posts->where('slug', '!=', 'om-prosjektet');
 
         return view('index', compact('posts', 'about_post'));
     }
@@ -52,5 +45,11 @@ class HomeController extends Controller
         $posts = Post::whereIn('slug', $user_slugs)->get();
 
         return view('about-group', compact('posts'));
+    }
+
+    public function about_project()
+    {
+        $post = Post::where('slug', 'om-prosjektet')->firstOrFail();
+        return view('posts.show', compact('post'));
     }
 }
