@@ -39,4 +39,18 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    public function about_group()
+    {
+        // Get all the articles about each user
+        $users = User::all()->pluck('name')->toArray();
+        $user_slugs = [];
+        foreach ($users as $user) {
+            array_push($user_slugs, 'om-' . str_slug($user));
+        }
+
+        $posts = Post::whereIn('slug', $user_slugs)->get();
+
+        return view('about-group', compact('posts'));
+    }
 }
