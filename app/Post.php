@@ -73,7 +73,7 @@ class Post extends Model
             $edited_image->orientate();
 
             // Upload image, convert it to jpg, and compress it slightly
-            Storage::put($image->url, $edited_image->stream('jpg', 90)->__toString());
+            Storage::put($image->url, $edited_image->stream('jpg', 70)->__toString());
 
             // Set image sizes
             $image->size_width = $edited_image->width();
