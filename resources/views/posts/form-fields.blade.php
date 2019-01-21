@@ -4,13 +4,8 @@
 </div>
 
 <div>
-    <label for="post_title">Tittel</label>
+    <label for="post_title">Bilde</label>
     <input type="file" name="image" id="post_image">
-</div>
-
-<div>
-    <label for="post_content">Innhold</label>
-    <textarea id="post_content" type="text" name="content">{{ old('content', (isset($post->content) ? $post->content : null)) }}</textarea>
 </div>
 
 <div>
@@ -31,3 +26,16 @@
         @endforeach
     </select>
 </div>
+
+<div>
+    <label for="post_content">Innhold</label>
+    <textarea id="post_content" type="text" name="content">{{ old('content', (isset($post->content) ? $post->content : null)) }}</textarea>
+</div>
+
+<p>Forhåndsvisning</p>
+<hr>
+
+<article>
+    <h1 class="title">{{ old('title', (isset($post->title) ? $post->title : null)) }}</h1>
+    <div id="post_content-preview" class="content"></div>
+</article>
