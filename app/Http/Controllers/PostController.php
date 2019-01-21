@@ -31,7 +31,7 @@ class PostController extends Controller
         $post_types = PostType::where('slug', 'public')->get()->toArray();
 
         // Get all public posts
-        $posts = Post::whereIn('post_type_id', $post_types)->get();
+        $posts = Post::whereIn('post_type_id', $post_types)->get()->sortByDESC('id');
 
         // Filter out the about project post from all the other posts
         $posts = $posts->where('slug', '!=', 'om-prosjektet');
@@ -41,7 +41,7 @@ class PostController extends Controller
 
     public function index_admin()
     {
-        $posts = Post::all();
+        $posts = Post::all()->sortByDESC('id');
         return view('posts.index_admin', compact('posts'));
     }
 

@@ -24,7 +24,7 @@ class HomeController extends Controller
     {
         // Get all public posts
         $post_types = PostType::where('slug', 'public')->get()->toArray();
-        $posts = Post::whereIn('post_type_id', $post_types)->get();
+        $posts = Post::whereIn('post_type_id', $post_types)->get()->sortByDESC('id');
 
         return view('index', compact('posts', 'about_post'));
     }
