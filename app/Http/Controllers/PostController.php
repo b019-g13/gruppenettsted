@@ -33,8 +33,8 @@ class PostController extends Controller
         // Get all public posts
         $posts = Post::whereIn('post_type_id', $post_types)->get()->sortByDESC('id');
 
-        // Filter out the about project post from all the other posts
-        $posts = $posts->where('slug', '!=', 'om-prosjektet');
+        // // Filter out the about project post from all the other posts
+        // $posts = $posts->where('slug', '!=', 'om-prosjektet');
 
         return view('posts.index', compact('posts'));
     }
