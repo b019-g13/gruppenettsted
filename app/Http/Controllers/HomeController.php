@@ -53,4 +53,10 @@ class HomeController extends Controller
         $post = Post::where('slug', 'om-prosjektet')->firstOrFail();
         return view('posts.show', compact('post'));
     }
+
+    public function documents()
+    {
+        $post = Post::where('slug', 'dokumenter')->firstOrFail();
+        return redirect()->route('post.show', $post->slug);
+    }
 }

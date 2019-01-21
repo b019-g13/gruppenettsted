@@ -9,6 +9,7 @@
             <a href="{{ route('post.index') }}">Innlegg</a>
             <a href="{{ route('about.group') }}">Om gruppen</a>
             <a href="{{ route('about.project') }}">Om prosjektet</a>
+            <a href="{{ route('about.documents') }}">Dokumenter</a>
         </div>
     </div>
 </nav>

@@ -18,6 +18,7 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 Route::get('/om-gruppen', 'HomeController@about_group')->name('about.group');
 Route::get('/om-prosjektet', 'HomeController@about_project')->name('about.project');
+Route::get('/dokumenter', 'HomeController@documents')->name('about.documents');
 
 // Laravel somtimes redirects to /home by default, so let's send those to the dashboard instead
 Route::get('home', function () {
