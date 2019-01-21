@@ -329,6 +329,7 @@ body.page-auth,
 body.page-dashboard,
 body.page-posts.posts-edit,
 body.page-posts.posts-create,
+body.page-posts.posts-form-pp,
 body.posts-index-admin {
     main {
         margin: 0 auto #{$line-height-base*2}em;
@@ -406,6 +407,51 @@ body.page-posts.posts-create {
 
             &:last-child {
                 text-align: right;
+            }
+        }
+    }
+}
+
+
+#flash-message {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 100%;
+    max-width: 350px;
+    list-style-type: none;
+
+    li {
+        display: block;
+        position: relative;
+
+        label {
+            cursor: pointer;
+            margin: 0 0 1em;
+            display: block;
+            padding: 1em 2em;
+            color: lighten(mix($red, $link-fg), 60%);
+            background-color: mix($red, $link-fg);
+
+            &:hover,
+            &:focus {
+                background-color: lighten(mix($red, $link-fg), 50%);
+                color: darken(mix($red, $link-fg), 25%);
+            }
+        }
+
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        input:checked {
+            display: none;
+
+            & + label {
+                display: none;
             }
         }
     }
